@@ -1,0 +1,65 @@
+---
+api_version: 32.0
+description: false
+label: Sample
+controller: false
+action: false
+extensions: false
+title: Sample Visualforce
+---
+- content_for :remote_objects
+  apex:remoteObjects
+    apex:remoteObjectModel name="Contact" fields="Id,Name,FirstName,LastName,Email,Phone"
+
+header.navbar.navbar-default.navbar-static-top.navbar-branded
+  .container
+    .navbar-header
+      a.navbar-brand.navbar-foundation-logo href="{!$Page.Sample}" middleman-visualforce
+    .nav.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle data-toggle="dropdown" href="#"
+            | Dropdown
+            span.caret<
+          ul.dropdown-menu
+            li: a href="#" Dummy
+            li: a href="#" Dummy
+            li.divider
+            li: a href="#" Dummy
+.page-header.page-header-anchor.context-c-boat
+  .container
+    h1 = lorem.name
+    p = lorem.words 5
+.container
+  section.section
+    .form-group
+      .input-group
+        .input-group-btn#remoting: button.btn.btn-default
+          i.s1utility.s1utility-search>
+          | JavaScript Remoting
+        input.form-control name="remoting_query" placeholder="JavaScript Remoting (only local)"
+    .form-group
+      .input-group
+        .input-group-btn#remoteobject: button.btn.btn-default
+          i.s1utility.s1utility-search>
+          | Remote Object
+        input.form-control name="remoteobject_query" placeholder="Remote Object"
+  .card-list.context-contact#queryresult
+
+  .card-list.context-account
+    a.card href="{!$Site.Prefix & $Page.Sample}"
+      .card-heading a href={&#x21;$Site.Prefix &amp; $Page.Sample}
+    a.card href="{!$Page.Sample}"
+      .card-heading a href={&#x21;$Page.Sample}
+  .row
+    .col-xs-6
+      a.card.context-lead href="{!URLFOR($Resource.sample, 'teki.png')}"
+        .card-heading img src={&#x21;URLFOR($Resource.sample, 'teki.png')}
+        ul.card-detail: li: img.tekisan src="{!URLFOR($Resource.sample, 'teki.png')}"
+    .col-xs-6
+      a.card.context-c-bridge href="{!URLFOR($Resource.assets, 'img/teki.png')}"
+        .card-heading img src={&#x21;URLFOR($Resource.assets, 'img/teki.png')}
+        ul.card-detail: li: img.tekisan src="{!URLFOR($Resource.assets, 'img/teki.png')}"
+footer.page-header.page-header-anchor
+  .container
+    p = lorem.paragraph

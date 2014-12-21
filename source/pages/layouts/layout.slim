@@ -1,0 +1,13 @@
+apex:page controller=current_page.data.controller action=current_page.data.action extensions=current_page.data.extensions docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false"
+  == yield_content :remote_objects
+  html
+    head
+      meta charset="utf-8"
+      meta name="format-detection" content="telephone=no"
+      meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"
+      title = current_page.data.title
+      link rel="icon" type="image/png" href="{!URLFOR($Resource.assets, 'img/favicon.png')}"
+      link rel="stylesheet" href="{!URLFOR($Resource.assets, 'css/app.css')}"
+      script src="{!URLFOR($Resource.assets, 'js/app.js')}"
+    body
+      == yield

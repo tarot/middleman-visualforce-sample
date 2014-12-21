@@ -1,0 +1,8 @@
+{
+  "name": "middleman-visualforce",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sf1": "~0.1.0-beta.15",
+    "bootstrap": "~3.3.1"
+  }
+}
