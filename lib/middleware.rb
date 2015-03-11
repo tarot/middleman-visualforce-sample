@@ -21,7 +21,7 @@ module Visualforce
           body.gsub! /\{!\s*URLFOR\s*\(\s*\$Resource\.([^,\s]+)\s*,\s*["']([^"']+)["']\s*\)\s*\}/i, "/#{@middleman.config[:staticresources_dir]}/\\1/\\2"
           body = "<!doctype html>#{body}"
           headers['Content-Type'] = 'text/html'
-          headers['Content-Length'] = body.length.to_s
+          headers['Content-Length'] = body.bytesize.to_s
           body = [body]
         end
         [code, headers, body]
